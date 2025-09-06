@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+    <head>
+        <title>Registation</title>
+        <link rel="stylesheet" href="{% static 'reg-app1/css/registration.css' %}">
+    </head>
+    <body>
+        <div class="form-container">
+            <form action="{% url "register-view" %}" method="POST" id="reg-form">
+                {% csrf_token %}
+                        {% if errors %}
+                            <ul>
+                                {% for error in errors %}
+                                    <li style="color:red;">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                            
+                        
+                        
+                        {% endif %}
+
+
+                    <div id='form-item'>
+                        <center>
+                        <h1 >Registation</h1>
+                        <center>
+                    <div>
+
+                    <div id='form-item'>
+                        <input type="text" placeholder="First name"id="form-feild" name='firstname'>
+                    <div>
+
+                    <div id='form-item'>
+                        <input type="text" placeholder="Last name"id="form-feild" name='lastname'>
+                    <div>
+                    
+                    <div id='form-item'>
+                        <input type="text" placeholder="Username"id="form-feild" name='username'>
+                    <div>
+                    <div id='form-item'>
+                        <input type="email" placeholder="Email" id="form-feild" name='email' required>
+                    <div>
+                    <div id='form-item'>
+                        <input type="text" placeholder='Phone' id="form-feild"name='phone-number'>
+                    <div>
+                    <div id='form-item'>
+                        <input type="text" placeholder="Password" id="form-feild"name='password'>
+                    <div>
+                    <div id='form-item'>
+                    <input type="text" placeholder="confirm-Password" id='form-feild'name='confirm-password'>
+                    <div>
+                    <div id='form-item'>
+                        <button type="submit">Submit</button>
+                    <div>
+                    <p>Already have an account <a href="#">sign in</a></p>
+            </form>
+        <div>
+    </body>
+</html>
